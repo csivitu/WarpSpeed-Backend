@@ -1,0 +1,23 @@
+on:
+  push:
+    branches: [ dev ]
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy
+        env:
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+          USER: ${{ secrets.USER }}
+          IP: ${{ secrets.IP }}
+          APP_NAME: ${{ github.event.repository.name }}
+        run: |
+          eval $(ssh-agent)
+          echo "$PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          ssh-keyscan $IP > ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+          rsync -auz ./ $USER@$IP:./$APP_NAME
+          ssh $USER@$IP "pkill screen && cd $APP_NAME && npm i && screen -dm node server.js"
