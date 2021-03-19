@@ -12,7 +12,9 @@ jobs:
           USER: ${{ secrets.USER }}
           IP: ${{ secrets.IP }}
           APP_NAME: ${{ github.event.repository.name }}
+          WARPSPEEDFIREBASE: ${{ secrets.WARPSPEEDFIREBASE }}
         run: |
+          echo $WARPSPEEDFIREBASE > warpspeedfirebase.json
           eval $(ssh-agent)
           echo "$PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
           mkdir -p ~/.ssh
