@@ -39,6 +39,7 @@ router.post("/", [authenticateToken], async (req, res) => {
   let field = {
     email: req.user.email,
     score: sum,
+    username: req.user.username,
   };
 
   const document = db
@@ -64,5 +65,24 @@ router.post("/", [authenticateToken], async (req, res) => {
     });
  }
 });
+router.get("/", async (req, res) => {
+  try {
+    db.collection("leaderboard")
+      .orderBy("score", "desc")
+      .get()
+      .then((querySnapshot) => {
+        const documents = querySnapshot.docs.map((doc) => doc.data());
+        res.status(200).send(documents);
+      })
+      .catch((err) => {
+        res.status(400).send(err);
+      });
+  } catch (err) {
+    res.status(400).json({
+      message: err,
+    });
+  }
+});
+
 
 module.exports = router;
