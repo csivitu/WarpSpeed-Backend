@@ -8,10 +8,10 @@
     <img src="https://csivit.com/images/favicon.png" alt="Logo" width="80">
   </a>
 
-  <h3 align="center">YOUR_TITLE</h3>
+  <h3 align="center">RIDDLER BACKEND 2021</h3>
 
   <p align="center">
-    YOUR_SHORT_DESCRIPTION
+    Backend of Riddler-2021
     <br />
     <a href="https://github.com/csivitu/Template"><strong>Explore the docs »</strong></a>
     <br />
@@ -29,34 +29,24 @@
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
-* [About the Project](#about-the-project)
-  * [Built With](#built-with)
-* [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
-* [Usage](#usage)
-* [Roadmap](#roadmap)
-* [Contributing](#contributing)
-* [License](#license)
-* [Contributors](#contributors-)
-
-
-
-<!-- ABOUT THE PROJECT -->
-## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`Template`
+- [Table of Contents](#table-of-contents)
+  - [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
 
 
 ### Built With
 
-* []()
-* []()
-* []()
+* []() Node.js
+* []() Express.js
+* []() FireBase
+
+ 
 
 
 
@@ -77,22 +67,37 @@ npm install npm@latest -g
  
 1. Clone the repo
 ```sh
-git clone https://github.com/csivitu/Template.git
+git clone https://github.com/csivitu/WarpSpeed-Backend.git
 ```
 2. Install NPM packages
 ```sh
 npm install
 ```
+3. Add .env file
+```sh
+ACCESS_TOKEN_SECRET= <JWT_SECRET>
+PORT=<PORT>
+DATABASE_URL=<FIREBASE_URL>
+```
+4. For starting the server
+```sh
+nodemon app.js
+```
+
 
 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
+This will start a development server that will restart the app when a file change is detected
+```sh
+nodemon app.js
+```
+For production:
+```sh
+npm start
+```
 
 
 <!-- ROADMAP -->
@@ -119,6 +124,7 @@ You are requested to follow the contribution guidelines specified in [CONTRIBUTI
 ## License
 
 Distributed under the MIT License. See [`LICENSE`](./LICENSE) for more information.
+
 
 
 
