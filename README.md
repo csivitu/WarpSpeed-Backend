@@ -8,10 +8,10 @@
     <img src="https://csivit.com/images/favicon.png" alt="Logo" width="80">
   </a>
 
-  <h3 align="center">RIDDLER BACKEND 2021</h3>
+  <h3 align="center">WARPSPEED BACKEND</h3>
 
   <p align="center">
-    Backend of Riddler-2021
+    Backend of Warpspeed
     <br />
     <a href="https://github.com/csivitu/Template"><strong>Explore the docs »</strong></a>
     <br />
